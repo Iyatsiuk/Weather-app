@@ -19,52 +19,49 @@
       </form>
     </div>
     <div class="row">
-      <div class="col-6">
+      <div class="col-6" id="day-info">
         <div id="city">Ternopil</div>
         <div id="day&time">Monday 12:30</div>
       </div>
-      <div class="col-6">
+      <div class="col-6" id="detailed-info">
         <div>Precipitation: <span id="precipitation">80</span>%</div>
         <div>Wind: <span id="wind">3</span>km/h</div>
       </div>
-      <div class="col-12">
-        <h1 id="temp">20 
-          <a href="#" id="celsius ">°C</a>
-           | 
-          <a href="#" id="fahrenheit">°F</a>
-          <span>☀️</span>
-          </h1>
-      </div>
+    </div>
+    <div class="col-12" id="temperature">
+      <h1 id="temp">20<a href="#" id="celsius">°C </a><span id="small-line">|</span><a href="#" id="fahrenheit">°F</a>
+      <span id="main-visual">☀️</span>
+      </h1>
     </div>
     <hr>
-    <div class="forecast text-center row align-items-start">
-      <div id="first" class="col">
+    <div class="text-center row align-items-start" id="forecast">
+      <div id="first" class="col day">
         <div>Tue</div>
-        <div>☀️</div>
+        <div class="visual">☀️</div>
         <div>15°</div>
       </div>
-      <div id="second" class="col">
+      <div id="second" class="col day">
         <div>Tue</div>
-        <div>☀️</div>
+        <div class="visual">☀️</div>
         <div>15°</div>
       </div>
-      <div id="third" class="col">
+      <div id="third" class="col day">
         <div>Tue</div>
-        <div>☀️</div>
+        <div class="visual">☀️</div>
         <div>15°</div>
       </div>
-      <div id="fourth" class="col">
+      <div id="fourth" class="col day">
         <div>Tue</div>
-        <div>☀️</div>
+        <div class="visual">☀️</div>
         <div>15°</div>
       </div>
-      <div id="fifth" class="col">
+      <div id="fifth" class="col day">
         <div>Tue</div>
-        <div>☀️</div>
+        <div class="visual">☀️</div>
         <div>15°</div>
       </div>
     </div>
-    <small>Coded by Iryna Yatsiuk and is 
+    <small id="small">Coded by Iryna Yatsiuk and is 
       <a href="https://github.com/Iyatsiuk/Weather-app.git" target="_blank">open-sourced</a>  
       on GitHub and hosted on 
       <a href="https://app.netlify.com/" target="_blank">Netlify</a> 

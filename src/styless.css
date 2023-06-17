@@ -2,6 +2,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.weather-app {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 1px solid #dadde1;
+  border-radius: 8px;
+}
+
 #input {
   border: 1px solid #dadde1;
   border-radius: 3px;
@@ -14,17 +22,53 @@ body {
   font-size: 14px;
   padding: 4px 12px;
 }
-.weather-app {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 25px;
-  border: 1px solid #dadde1;
-  border-radius: 8px;
+
+#day-info, #detailed-info {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #666666;
+}
+#detailed-info {
+  width: 140px;
+  margin-left: 70px;
 }
 
 #temp{
   color: #666666;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 28px;
+  margin: 0;
 }
+
+#temperature {
+  margin: 10px 0;
+}
+
+ #celsius, #fahrenheit, #small-line {
+  text-decoration: none;
+  color: #919191;
+  font-size: 14px;
+  vertical-align:text-top;
+ }
+
+ hr {
+  color: #666666;
+ }
+ #forecast {
+  margin: 10px 0;
+ }
+ #first, #second, #third, #fourth, #fifth {
+  padding: 0 !important;
+  font-size: 14px;
+ }
+
+.day:hover{
+  border: 1px solid #dadde1;
+  border-radius: 2px;
+ }
+
+ #small {
+  font-size: 10px;
+  color: #666666;
+ }
