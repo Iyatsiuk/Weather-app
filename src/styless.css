@@ -2,9 +2,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.weather-app {
+#weather-app-wrapper {
   max-width: 600px;
   margin: 40px auto 0 auto;
+}
+.weather-app {
+
   padding: 25px;
   border: 1px solid #dadde1;
   border-radius: 8px;
@@ -69,6 +72,7 @@ body {
  }
 
  #small {
+  display: block;
   font-size: 10px;
   color: #666666;
  }
