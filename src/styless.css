@@ -36,7 +36,7 @@ body {
   margin-left: 70px;
 }
 
-#temp{
+#temp, #temperature{
   color: #666666;
   font-size: 30px;
   font-weight: 300;
@@ -62,11 +62,12 @@ body {
   margin: 10px 0;
  }
  #first, #second, #third, #fourth, #fifth {
-  padding: 0 !important;
+  padding: 10px !important;
   font-size: 14px;
  }
 
 .day:hover{
+  padding: 9px;
   border: 1px solid #dadde1;
   border-radius: 2px;
  }
