@@ -32,7 +32,7 @@ function displayWeatherData(response) {
 
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
-  
+
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
@@ -41,6 +41,7 @@ function displayWeatherData(response) {
 }
 
 let apiKey = "e233dfo65c6ete669b0c1463eb14aaf0";
-let apiURL = `https://api.shecodes.io/weather/v1/current?query=ternopil&key=${apiKey}&units=metric`;
+let city = "Ternopil";
+let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
 axios.get(apiURL).then(displayWeatherData);
