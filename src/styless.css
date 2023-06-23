@@ -80,3 +80,18 @@ body {
   font-size: 10px;
   color: #666666;
  }
+
+#temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#temperature img {
+  order: 1;
+}
+
+#temperature h1 {
+  order: 2;
+  margin-left: 10px;
+}
