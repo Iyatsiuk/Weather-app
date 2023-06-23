@@ -24,8 +24,6 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherData(response) {
-  console.log(response.data);
-  
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
 
@@ -46,7 +44,7 @@ function displayWeatherData(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
- 
+  iconElement.setAttribute("alt", response.data.condition.icon )
 }
 
 let apiKey = "e233dfo65c6ete669b0c1463eb14aaf0";
