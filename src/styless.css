@@ -46,20 +46,20 @@ body {
   line-height: 28px;
   margin: 0;
 }
-
-#temperature {
-  margin: 10px 0;
+img {
+  max-width: 75px;
 }
-
  #celsius, #fahrenheit, #small-line {
   text-decoration: none;
   color: #919191;
   font-size: 14px;
   vertical-align:text-top;
+  padding-bottom: 10px;
  }
 
- hr {
+ #hr {
   color: #666666;
+  margin: 10px 0;
  }
  #forecast {
   margin: 10px 0;
@@ -93,5 +93,4 @@ body {
 
 #temperature h1 {
   order: 2;
-  margin-left: 10px;
 }
