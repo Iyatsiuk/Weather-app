@@ -28,7 +28,8 @@ function displayWeatherData(response) {
   cityElement.innerHTML = response.data.city;
 
   let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(response.data.temperature.current);
+  celsiusTemp = response.data.temperature.current;
+  tempElement.innerHTML = Math.round(celsiusTemp);
 
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -59,7 +60,33 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Ternopil");
+function convertingToFahrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  //remove tha active class from the celsius link
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function convertingToCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#weather-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertingToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertingToCelsius);
+
+search("Ternopil");
