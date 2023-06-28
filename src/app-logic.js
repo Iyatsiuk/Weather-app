@@ -47,8 +47,19 @@ function displayWeatherData(response) {
   iconElement.setAttribute("alt", response.data.condition.icon )
 }
 
-let apiKey = "e233dfo65c6ete669b0c1463eb14aaf0";
-let city = "Ternopil";
-let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "e233dfo65c6ete669b0c1463eb14aaf0";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayWeatherData);
+}
 
-axios.get(apiURL).then(displayWeatherData);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Ternopil");
+
+let form = document.querySelector("#weather-form");
+form.addEventListener("submit", handleSubmit);
