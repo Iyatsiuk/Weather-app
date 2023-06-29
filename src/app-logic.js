@@ -78,15 +78,33 @@ function convertingToCelsius(event) {
   celsiusLink.classList.add("active");
 }
 
+function getLocation() {
+  // Get the current position using the browser's geolocation API and handle the result
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "e233dfo65c6ete669b0c1463eb14aaf0";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
+  
+  axios.get(apiURL).then(displayWeatherData);
+}
+
 let celsiusTemp = null;
 
 let form = document.querySelector("#weather-form");
 form.addEventListener("submit", handleSubmit);
+
+let currentWeatherBtn = document.querySelector("#current-city-btn");
+currentWeatherBtn.addEventListener("click", getLocation);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertingToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertingToCelsius);
+
 
 search("Ternopil");
