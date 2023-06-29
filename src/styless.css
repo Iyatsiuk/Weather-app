@@ -61,19 +61,6 @@ img {
   color: #666666;
   margin: 10px 0;
  }
- #forecast {
-  margin: 10px 0;
- }
- #first, #second, #third, #fourth, #fifth {
-  padding: 10px !important;
-  font-size: 14px;
- }
-
-.day:hover{
-  padding: 9px;
-  border: 1px solid #dadde1;
-  border-radius: 2px;
- }
 
  #small {
   display: block;
@@ -98,4 +85,23 @@ img {
 #temperature .active{
   color: #3f3e3e;
   cursor: default;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
