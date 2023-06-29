@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/styless.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <title>Wether app</title>
 </head>
+
 <body>
   <div class="container">
-  <div id="weather-app-wrapper">
-  <div class="weather-app">
-    <div>
-      <form id="weather-form" class="col g-3">
-          <input type="search" placeholder="Type to search..." class="col-sm-8" id="city-input" autocomplete="off">
-          <input type="submit" value="Search" id="search-city-btn" class="btn btn-secondary mb-2">
-          <input type="button" value="Current" id="current-city-btn" class="btn btn-secondary mb-2"> 
-      </form>
-    </div>
-    <div class="row">
-      <div class="col-6" id="day-info">
-        <div id="city"></div>
-        <div>Last updated: <span id="date"></span></div>
+    <div id="weather-app-wrapper">
+      <div class="weather-app">
+        <div>
+          <form id="weather-form" class="col g-3">
+            <input type="search" placeholder="Type to search..." class="col-sm-8" id="city-input" autocomplete="off">
+            <input type="submit" value="Search" id="search-city-btn" class="btn btn-secondary mb-2">
+            <input type="button" value="Current" id="current-city-btn" class="btn btn-secondary mb-2">
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-6" id="day-info">
+            <div id="city"></div>
+            <div>Last updated: <span id="date"></span></div>
+          </div>
+          <div class="col-6" id="detailed-info">
+            <div>Humidity: <span id="humidity">80</span>%</div>
+            <div>Wind: <span id="wind">3</span>km/h</div>
+          </div>
+        </div>
+        <div class="col-12" id="temperature">
+          <div class="clearfix">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly_cloudy" id="icon">
+          </div>
+          <h1 id="temperature"><span id="temp">20</span><a href="#" id="celsius-link" class="active">°C </a><span
+              id="small-line">|</span><a href="#" id="fahrenheit-link">°F</a> </h1>
+        </div>
+        <hr id="hr">
+        <div class="text-center row align-items-start" id="forecast">
+          <div id="first" class="col day">
+            <div>Tue</div>
+            <div class="visual">☀️</div>
+            <div>15°</div>
+          </div>
+          <div id="second" class="col day">
+            <div>Tue</div>
+            <div class="visual">☀️</div>
+            <div>15°</div>
+          </div>
+          <div id="third" class="col day">
+            <div>Tue</div>
+            <div class="visual">☀️</div>
+            <div>15°</div>
+          </div>
+          <div id="fourth" class="col day">
+            <div>Tue</div>
+            <div class="visual">☀️</div>
+            <div>15°</div>
+          </div>
+          <div id="fifth" class="col day">
+            <div>Tue</div>
+            <div class="visual">☀️</div>
+            <div>15°</div>
+          </div>
+        </div>
+
       </div>
-      <div class="col-6" id="detailed-info">
-        <div>Humidity: <span id="humidity">80</span>%</div>
-        <div>Wind: <span id="wind">3</span>km/h</div>
-      </div>
+      <small id="small">Coded by Iryna Yatsiuk and is
+        <a href="https://github.com/Iyatsiuk/Weather-app.git" target="_blank">open-sourced</a>
+        on GitHub and hosted on
+        <a href="https://app.netlify.com/" target="_blank">Netlify</a>
+      </small>
     </div>
-    <div class="col-12" id="temperature">
-      <div class="clearfix">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly_cloudy" id="icon">
-      </div>
-      <h1 id="temperature"><span id="temp">20</span><a href="#" id="celsius-link" class="active">°C </a><span id="small-line">|</span><a href="#" id="fahrenheit-link">°F</a> </h1>
-    </div>
-  </div>
-  <small id="small">Coded by Iryna Yatsiuk and is
-    <a href="https://github.com/Iyatsiuk/Weather-app.git" target="_blank">open-sourced</a>
-    on GitHub and hosted on
-    <a href="https://app.netlify.com/" target="_blank">Netlify</a>
-  </small>
-  </div>
   </div>
   <script src="src/app-logic.js"></script>
 </body>
+
 </html>
