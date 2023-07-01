@@ -105,24 +105,6 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function convertingToFahrenheit(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  //remove tha active class from the celsius link
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function convertingToCelsius(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
-
 function getLocation() {
   // Get the current position using the browser's geolocation API and handle the result
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -137,20 +119,11 @@ function showPosition(position) {
   axios.get(apiURL).then(displayWeatherData);
 }
 
-let celsiusTemp = null;
-
 let form = document.querySelector("#weather-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentWeatherBtn = document.querySelector("#current-city-btn");
 currentWeatherBtn.addEventListener("click", getLocation);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertingToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertingToCelsius);
-
 
 search("Tokyo");
 
