@@ -33,8 +33,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
-
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -154,5 +152,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertingToCelsius);
 
 
-search("Ternopil");
+search("Tokyo");
 
